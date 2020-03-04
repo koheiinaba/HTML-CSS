@@ -4,14 +4,14 @@
   box-sizing: border-box;
 }
 
-.clearfix {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+.clearfix::after {
+	content:"";
+	display: block;
+	clear: both;
 }
 
 main {
-	width: 960px;
+	width: 990px;
 	margin: 50px auto;
 }
 
@@ -24,10 +24,6 @@ main {
 	border: 1px solid #eee;
 }
 
-.step-box:last-child{
-  margin-right: 0;
-}
-
 .step-img1 {
 	height: 150px;
 	background-image: url(chapter9_exercise/img/flow01.png);
@@ -35,14 +31,14 @@ main {
 	background-position: bottom;
 }
 
-.step-img2{
+.step-img2 {
   height: 150px;
   background-image: url(chapter9_exercise/img/flow02.png);
   background-size: cover;
   background-position: bottom;
 }
 
-.step-img3{
+.step-img3 {
   height: 150px;
   background-image: url(chapter9_exercise/img/flow03.png);
   background-size: cover;
@@ -53,12 +49,26 @@ main {
 	position: absolute;
 	top: 0;
 	left: 0;
-	background-color: orange;
+	background-color: #FF9A4B;
 	color: #fff;
 	padding: 3px;
 }
 
 .title {
 	margin: 15px 0 5px;
+}
+
+@media screen and (max-width:768px) {
+	main {
+		width: 100%;
+		float: none;
+	}
+	.step-box {
+		width: 90%;
+		margin: 0 auto;
+		float: none;
+		margin-bottom: 20px;
+	}
+
 }
 
